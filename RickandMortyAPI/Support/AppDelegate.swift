@@ -10,6 +10,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // TODO: General comment: Use SwiftLint to make sure your code is up to the standards and readable.
+    // TODO: Use R.swift to manage external resources like texts, images, colors, typefaces, etc.
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

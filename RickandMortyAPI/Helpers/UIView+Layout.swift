@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIView {
-    
+
+    // TODO: Add '= nil' to each nullable parameter if they are not needed.
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         
@@ -38,7 +39,8 @@ extension UIView {
         if size.height != 0 {
             anchoredConstraints.height = heightAnchor.constraint(equalToConstant: size.height)
         }
-        
+
+        // TODO: Use NSLayoutConstraint.activate([...]) instead, faster and easier.
         [anchoredConstraints.top, anchoredConstraints.leading, anchoredConstraints.bottom, anchoredConstraints.trailing, anchoredConstraints.width, anchoredConstraints.height].forEach{ $0?.isActive = true }
         
         return anchoredConstraints

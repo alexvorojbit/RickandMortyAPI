@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Avoid using accronyms for your classes names, use `CharactersViewController` or `CharactersListViewController`.
+// TODO: Refactor to use the MVVM architecture and add a ViewModel (eg: CharactersListViexModel)
 class CharactersVC: UIViewController {
     
     var characterResults = [CharacterResults]()
@@ -51,6 +53,7 @@ class CharactersVC: UIViewController {
     
     private func setupCollectionView() {
         // Initialises the collection view with a CollectionViewLayout which we will define
+        // TODO: Use AutoLayout to add layout constraint, currently the collection view does not rotate with the screen.
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createRowsFlowLayout(in: view))
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
@@ -77,6 +80,7 @@ class CharactersVC: UIViewController {
     
     
     func getData() {
+        // TODO: Move this to the ViewModel and use either the delegate pattern or RxSwift if you feel brave enough.
         NetworkManager.shared.getCharactersCVCData { [weak self] result in
             guard let self = self else { return }
 
@@ -98,6 +102,7 @@ class CharactersVC: UIViewController {
 
 // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
 
+// TODO: Refactor those function to use the ViewModel.
 extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,10 +111,12 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // TODO: Avoid using force unwrapping, its dangerous and will lead to crashes.
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCell.identifier, for: indexPath) as! CharactersCell
         let characterResults = characterResults[indexPath.item]
         cell.characterResults = characterResults
-        
+
+        // All the layering needs to be move to the cell itself, it has nothing to do with this ViewController.
         cell.contentView.layer.cornerRadius = 12
         cell.contentView.layer.borderWidth = 1.0
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -127,6 +134,6 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
+
     }
 }

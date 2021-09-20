@@ -7,10 +7,13 @@
 
 import UIKit
 
+// TODO: Elements that are working together (like CharactersList, CharacterCell, etc.) should be grouped together (like Scenes > Characters > VC + VM + Cell).
+
 class CharactersCell: UICollectionViewCell {
     
 //    var episodeResults: Episode?
     
+    // TODO: It would be better to provide a configure(with: Character) instead on relying on property changes
     var characterResults: CharacterResults! {
         didSet {
             title.text = characterResults.name
@@ -20,6 +23,7 @@ class CharactersCell: UICollectionViewCell {
         }
     }
     
+    // TODO: No need to lazy load the image view as it will always be present, load it with the placeholder image instead.
     lazy var imageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
@@ -66,7 +70,7 @@ class CharactersCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
 //            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
 //            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
+            imageView.widthAnchor.constraint(equalToConstant: 100), // TODO: This size might not work with all iPhones
             imageView.heightAnchor.constraint(equalToConstant: 100),
 
 //            title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),

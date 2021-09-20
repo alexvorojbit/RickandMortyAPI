@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 struct UIHelper {
-    
+
+    // TODO: If this function is used only for the Characters list, move it to the ViewController itself.
     static func createRowsFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
         let width                       = view.bounds.width
         let padding: CGFloat            = 16

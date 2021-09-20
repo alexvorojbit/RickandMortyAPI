@@ -7,6 +7,8 @@
 
 import Foundation
 
+// TODO: Split those structures into separates files within a "Models" foler
+
 struct Response: Decodable, Hashable {
     let results: [CharacterResults]
 }

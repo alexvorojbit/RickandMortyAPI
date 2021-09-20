@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: The file should be called `UICollectionReusableViewExtension` to make it clear what it relates to.
+
 /*
  Simple extension that adds the "identifier" property to all UICollectionReusableView,
  it uses its own class name as the identifier so it should always be unique
