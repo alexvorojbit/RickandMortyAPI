@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: This code might have be copied, XXX+YYY means that it was done by someone who practiced Obj-C :D.
+// TODO: Move this to a dedicated extension file like `UIViewExtension`.
 extension UIView {
 
     // TODO: Add '= nil' to each nullable parameter if they are not needed.

@@ -13,6 +13,7 @@ struct Response: Decodable, Hashable {
     let results: [CharacterResults]
 }
 
+// TODO: Use the simplest names you can, `Character` would have been great here.
 struct CharacterResults: Decodable, Hashable {
     let name: String
     let location: Location

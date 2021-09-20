@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: Why use the RM prefix, it was required for Obj-C but not for Swift (yay, namespaces).
 class RMTitleLabel: UILabel {
 
     override init(frame: CGRect) {

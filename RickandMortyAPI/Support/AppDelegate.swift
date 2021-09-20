@@ -10,9 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // TODO: General comment: Use SwiftLint to make sure your code is up to the standards and readable.
+    // TODO: Add a HeaderTemplate to have the same file headers everywhere and make sure new files are up to the same standards.
+    // TODO: Use SwiftLint to make sure your code is up to the standards and readable.
     // TODO: Use R.swift to manage external resources like texts, images, colors, typefaces, etc.
-
+    // TODO: Simplify your project file by moving most of the build settings from the target to the project itself.
+    // TODO: Remove as much comments as possible, dead code and useless comments are generating too much noise.
+    // TODO: If the App is not to be used with Scenes, check the Requires full screen setting in Project's General tab.
+    // TODO: Move the logical code into a dedicated AND well tested framework (like RickAndMortyAPICore) and link both projects with a Workspace.
+    // TODO: Add a Splashscreen to allow your App to boot peacefully AND check that the network is up and running and that the API can be called.
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

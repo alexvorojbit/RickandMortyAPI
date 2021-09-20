@@ -10,6 +10,8 @@ import UIKit
 // TODO: Avoid using accronyms for your classes names, use `CharactersViewController` or `CharactersListViewController`.
 // TODO: Refactor to use the MVVM architecture and add a ViewModel (eg: CharactersListViexModel)
 class CharactersVC: UIViewController {
+
+    // TODO: You might want to add the "drag to refresh" capability as you have no Refresh button.
     
     var characterResults = [CharacterResults]()
     var collectionView: UICollectionView!
@@ -34,14 +36,19 @@ class CharactersVC: UIViewController {
         activityIndicatorView.centerInSuperview()
         getData()
 //        self.navigationController?.navigationBar.changeFont()
+
+        // TODO: Move this to the AppDelegate since it will be done for all the navigation stack and not only this VC.
         UINavigationBar.appearance().titleTextAttributes = attrs
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // TODO: Watch out, you'll need to do the contrary if you push another VC.
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+
 //        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "YOUR FONT NAME", size: 25.0) ?? ""]
 //        guard let sansLightFont = UIFont(name: "OpenSans", size: 20) else { return }
 //        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : sansLightFont]
@@ -93,6 +100,7 @@ class CharactersVC: UIViewController {
                     print("SUCCESS")
                 }
             case .failure(let error):
+                // TODO: You might want to gracefully handle errors, by informing the user that something, somehow, went wrong and he / she might have to try again later.
                 print(error.rawValue)
                 print("FAILED")
             }
@@ -100,6 +108,7 @@ class CharactersVC: UIViewController {
     }
 }
 
+// TODO: Typos in Protocol names.
 // MARK: - UICollecionViewDataSource, UICollecionViewDelegate
 
 // TODO: Refactor those function to use the ViewModel.

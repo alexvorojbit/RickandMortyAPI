@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: Refactor this with RMTitleLabel, too much code duplication for so little differences.
 class RMBodyLabel: UILabel {
 
     override init(frame: CGRect) {

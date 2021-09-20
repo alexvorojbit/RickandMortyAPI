@@ -8,6 +8,7 @@
 import UIKit
 
 // TODO: Elements that are working together (like CharactersList, CharacterCell, etc.) should be grouped together (like Scenes > Characters > VC + VM + Cell).
+// TODO: Rename the class to CharacterCollectionViewCell, otherwise people might think this cell contains multiple characters.
 
 class CharactersCell: UICollectionViewCell {
     

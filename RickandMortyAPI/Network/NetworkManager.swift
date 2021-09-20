@@ -12,7 +12,8 @@ class NetworkManager {
     static let shared   = NetworkManager()
     private let characterURL = "https://rickandmortyapi.com/api/character"
     private let episodeURL = "https://rickandmortyapi.com/api/episode"
-    
+
+
     func getElements<Element: Codable>(from endpoint: URL, completion: @escaping (Result<[Element], ErrorMessage>) -> Void) {
         
         URLSession.shared.dataTask(with: endpoint) { (data, response, error) in
@@ -42,6 +43,7 @@ class NetworkManager {
         }.resume()
     }
 
+    // TODO: Refactor this to use the `getElements` function above.
     func getCharactersCVCData(completion: @escaping (Result<Response, ErrorMessage>) -> Void) {
         guard let url = URL(string: characterURL) else {
             completion(.failure(.unableToDownload))
