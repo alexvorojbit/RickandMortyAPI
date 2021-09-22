@@ -12,6 +12,7 @@ class NetworkManager {
     static let shared   = NetworkManager()
     private let characterURL = "https://rickandmortyapi.com/api/character"
     private let episodeURL = "https://rickandmortyapi.com/api/episode"
+    let cache           = NSCache<NSString, UIImage>()
 
 
     func getElements<Element: Codable>(from endpoint: URL, completion: @escaping (Result<[Element], ErrorMessage>) -> Void) {

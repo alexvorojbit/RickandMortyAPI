@@ -9,11 +9,11 @@ import UIKit
 
 // TODO: Avoid using accronyms for your classes names, use `CharactersViewController` or `CharactersListViewController`.
 // TODO: Refactor to use the MVVM architecture and add a ViewModel (eg: CharactersListViexModel)
-class CharactersVC: UIViewController {
+class CharactersViewController: UIViewController {
 
     // TODO: You might want to add the "drag to refresh" capability as you have no Refresh button.
     
-    var characterResults = [CharacterResults]()
+    var characterResults = [Character]()
     var collectionView: UICollectionView!
     
     let activityIndicatorView: UIActivityIndicatorView = {
@@ -23,11 +23,6 @@ class CharactersVC: UIViewController {
         aiv.hidesWhenStopped = true
         return aiv
     }()
-    
-    let attrs = [
-        NSAttributedString.Key.foregroundColor: UIColor.red,
-        NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +30,7 @@ class CharactersVC: UIViewController {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.centerInSuperview()
         getData()
-//        self.navigationController?.navigationBar.changeFont()
-
-        // TODO: Move this to the AppDelegate since it will be done for all the navigation stack and not only this VC.
-        UINavigationBar.appearance().titleTextAttributes = attrs
+        
         
     }
     
@@ -48,19 +40,13 @@ class CharactersVC: UIViewController {
         // TODO: Watch out, you'll need to do the contrary if you push another VC.
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
-
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "YOUR FONT NAME", size: 25.0) ?? ""]
-//        guard let sansLightFont = UIFont(name: "OpenSans", size: 20) else { return }
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : sansLightFont]
-        
     }
     
     
     // MARK: - Setting up Collection View -
     
     private func setupCollectionView() {
-        // Initialises the collection view with a CollectionViewLayout which we will define
-        // TODO: Use AutoLayout to add layout constraint, currently the collection view does not rotate with the screen.
+        // Initialises the collection view with a CollectionViewLayout
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createRowsFlowLayout(in: view))
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
@@ -68,19 +54,25 @@ class CharactersVC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
 
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         
         // Registering all Cells
-        collectionView.register(CharactersCell.self, forCellWithReuseIdentifier: CharactersCell.identifier)
+        collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: CharacterCollectionViewCell.identifier)
     }
     
 //    func configure<T: SelfConfiguringCell>(_ cellType: T.Type, with app: CharactersResults, for indexPath: IndexPath) -> T {
 //        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
 //            fatalError("Unable to dequeue \(cellType)")
 //        }
-//
 //        cell.configure(with: app)
 //        return cell
 //    }
@@ -108,11 +100,10 @@ class CharactersVC: UIViewController {
     }
 }
 
-// TODO: Typos in Protocol names.
-// MARK: - UICollecionViewDataSource, UICollecionViewDelegate
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 
 // TODO: Refactor those function to use the ViewModel.
-extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterResults.count
@@ -121,23 +112,9 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // TODO: Avoid using force unwrapping, its dangerous and will lead to crashes.
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCell.identifier, for: indexPath) as! CharactersCell
-        let characterResults = characterResults[indexPath.item]
-        cell.characterResults = characterResults
-
-        // All the layering needs to be move to the cell itself, it has nothing to do with this ViewController.
-        cell.contentView.layer.cornerRadius = 12
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.clear.cgColor
-        cell.contentView.layer.masksToBounds = true
-
-        cell.layer.backgroundColor = UIColor.white.cgColor
-        cell.layer.shadowColor = UIColor.systemGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 5)
-        cell.layer.shadowRadius = 10
-        cell.layer.shadowOpacity = 0.2
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as! CharacterCollectionViewCell
+        let characterCell = characterResults[indexPath.item]
+        cell.configure(with: characterCell)
         
         return cell
     }

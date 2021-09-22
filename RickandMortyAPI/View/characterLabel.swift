@@ -7,8 +7,7 @@
 
 import UIKit
 
-// TODO: Why use the RM prefix, it was required for Obj-C but not for Swift (yay, namespaces).
-class RMTitleLabel: UILabel {
+class characterLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,19 +19,16 @@ class RMTitleLabel: UILabel {
     }
     
     
-    init(title: String) {
+    init(font: UIFont, textColor: UIColor) {
         super.init(frame: .zero)
-        self.text = title
+        self.font = font
+        self.textColor = textColor
     }
     
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
-        
-        textColor                   = .systemOrange
-        tintColor                   = .systemOrange
         textAlignment               = .left
-        font                        = UIFont.preferredFont(forTextStyle: .title2)
         adjustsFontSizeToFitWidth   = true
         minimumScaleFactor          = 0.5
     }

@@ -1,19 +1,17 @@
 //
-//  UIView+Layout.swift
+//  UIViewExtension.swift
 //  RickandMortyAPI
 //
-//  Created by Alexandru Vorojbit on 9/4/21.
+//  Created by Alexandru Vorojbit on 20.09.2021.
 //
 
 import UIKit
 
-// TODO: This code might have be copied, XXX+YYY means that it was done by someone who practiced Obj-C :D.
-// TODO: Move this to a dedicated extension file like `UIViewExtension`.
 extension UIView {
 
     // TODO: Add '= nil' to each nullable parameter if they are not needed.
     @discardableResult
-    func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
+    func anchor(top: NSLayoutYAxisAnchor? = nil, leading: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         
         translatesAutoresizingMaskIntoConstraints = false
         var anchoredConstraints = AnchoredConstraints()
@@ -114,4 +112,3 @@ extension UIView {
 struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
-

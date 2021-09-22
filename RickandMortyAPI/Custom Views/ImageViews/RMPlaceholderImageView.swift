@@ -7,36 +7,56 @@
 
 import UIKit
 
-let cachedImages = NSCache<NSString, UIImage>()
+class avatarImageView: UIImageView {
+    
+    let cache               = NetworkManager.shared.cache
+    let placeholderImage    = UIImage(named: "character-placeholder")!
 
-extension UIImageView {
-
-    //Fetch image profile from a URL Using URLSession and DispatchQueue main async
-    func loadImageUsingCacheWithUrlString(urlString: String) {
-
-        self.image = nil
-
-        //Check cache for image first
-        if let cacheImage = cachedImages.object(forKey: urlString as NSString)  {
-            print("Fetching image from cache...")
-            self.image = cacheImage
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    private func configure() {
+        layer.cornerRadius  = 10
+        clipsToBounds       = true
+        image               = placeholderImage
+        contentMode = .scaleAspectFit
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    func downloadImage(from urlString: String) {
+        
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
             return
         }
-
-        //Otherwise fire off a new download
+        
         guard let url = URL(string: urlString) else { return }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return }
             if error != nil { return }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             guard let data = data else { return }
-
-            guard let downloadedImage = UIImage(data: data) else { return }
-            cachedImages.setObject(downloadedImage, forKey: urlString as NSString)
-
-            DispatchQueue.main.async { self.image = downloadedImage }
+            
+            guard let image = UIImage(data: data) else { return }
+            self.cache.setObject(image, forKey: cacheKey)
+            
+            DispatchQueue.main.async { self.image = image }
         }
+        
         task.resume()
     }
 }
+
 
