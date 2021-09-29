@@ -15,6 +15,7 @@ class CharactersViewController: UIViewController {
     
     var characterResults = [Character]()
     var collectionView: UICollectionView!
+    private let characterURL = "https://rickandmortyapi.com/api/character"
     
     let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .large)
@@ -78,7 +79,7 @@ class CharactersViewController: UIViewController {
     
     
     func getData() {
-        // TODO: Move this to the ViewModel and use either the delegate pattern or RxSwift if you feel brave enough.
+        // TODO: Move this to the ViewModel.
         NetworkManager.shared.getCharactersCVCData { [weak self] result in
             guard let self = self else { return }
 
@@ -97,11 +98,10 @@ class CharactersViewController: UIViewController {
             }
         }
     }
+    
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-
-// TODO: Refactor those function to use the ViewModel.
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,17 +110,19 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: Avoid using force unwrapping, its dangerous and will lead to crashes.
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
             fatalError("DequeueReusableCell failed while casting")
         }
+        
         let characterCell = characterResults[indexPath.item]
         cell.configure(with: characterCell)
         
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        print(characterResults[indexPath.item])
     }
 }

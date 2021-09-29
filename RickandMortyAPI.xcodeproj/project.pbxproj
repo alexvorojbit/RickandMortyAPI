@@ -28,6 +28,7 @@
 		FA82587026F90F3400356C41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82586F26F90F3400356C41 /* UIViewExtension.swift */; };
 		FAF1296E27031D4B006FC271 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FAF1296D27031D4B006FC271 /* .swiftlint.yml */; };
 		FAF12972270453CC006FC271 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAF12971270453CC006FC271 /* .gitignore */; };
+		FAF12974270471AE006FC271 /* EpisodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF12973270471AE006FC271 /* EpisodeStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		FA82586F26F90F3400356C41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FAF1296D27031D4B006FC271 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FAF12971270453CC006FC271 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAF12973270471AE006FC271 /* EpisodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				FA7F957226E394210041BB27 /* ImageViews */,
 				FA7F956926E38CF00041BB27 /* Controller */,
 				FA7F956A26E38CFD0041BB27 /* Cells */,
+				FAF12973270471AE006FC271 /* EpisodeStore.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				FA7F955F26E2A9660041BB27 /* Response.swift in Sources */,
 				FA7F956426E376250041BB27 /* UICollectionReusableViewExtension.swift in Sources */,
 				FA7F957126E393CA0041BB27 /* NetworkManager.swift in Sources */,
+				FAF12974270471AE006FC271 /* EpisodeStore.swift in Sources */,
 				FA1A6D4C26E14E7F000AF4A8 /* CharactersViewController.swift in Sources */,
 				FA1A6D5026E15765000AF4A8 /* CharacterLabel.swift in Sources */,
 				FA7F958226F3CF6D0041BB27 /* CharacterDetailsViewController.swift in Sources */,

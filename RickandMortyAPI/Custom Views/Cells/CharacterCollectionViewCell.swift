@@ -1,5 +1,5 @@
 //
-//  CharactersCell.swift
+//  CharacterCollectionViewCell.swift
 //  RickandMortyAPI
 //
 //  Created by Alexandru Vorojbit on 9/4/21.
@@ -14,6 +14,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     let imageView = AvatarImageView(frame: .zero)
     let title = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title2), textColor: .systemOrange)
     let location = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .footnote), textColor: .secondaryLabel)
+    let episode = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .footnote), textColor: .secondaryLabel)
     
     
     override init(frame: CGRect) {
@@ -26,7 +27,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        let innerStackView = UIStackView(arrangedSubviews: [title, location])
+        let innerStackView = UIStackView(arrangedSubviews: [title, location, episode])
         innerStackView.axis = .vertical
         innerStackView.spacing = 5
         innerStackView.layoutMargins = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
