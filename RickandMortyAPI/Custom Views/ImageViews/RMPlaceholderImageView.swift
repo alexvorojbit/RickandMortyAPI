@@ -1,5 +1,5 @@
 //
-//  RMPlaceholderImageView.swift
+//  AvatarImageView.swift
 //  RickandMortyAPI
 //
 //  Created by Alexandru Vorojbit on 9/4/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class avatarImageView: UIImageView {
+class AvatarImageView: UIImageView {
     
     let cache               = NetworkManager.shared.cache
     let placeholderImage    = UIImage(named: "character-placeholder")!
@@ -16,12 +16,10 @@ class avatarImageView: UIImageView {
         super.init(frame: frame)
         configure()
     }
-    
-    
+     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     private func configure() {
         layer.cornerRadius  = 10
@@ -31,9 +29,7 @@ class avatarImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
     func downloadImage(from urlString: String) {
-        
         let cacheKey = NSString(string: urlString)
         
         if let image = cache.object(forKey: cacheKey) {
@@ -48,15 +44,11 @@ class avatarImageView: UIImageView {
             if error != nil { return }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             guard let data = data else { return }
-            
             guard let image = UIImage(data: data) else { return }
             self.cache.setObject(image, forKey: cacheKey)
-            
+
             DispatchQueue.main.async { self.image = image }
         }
-        
         task.resume()
     }
 }
-
-

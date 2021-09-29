@@ -11,9 +11,9 @@ import UIKit
 
 class CharacterCollectionViewCell: UICollectionViewCell {
 
-    let imageView = avatarImageView(frame: .zero)
-    let title = characterLabel(font: UIFont.preferredFont(forTextStyle: .title2), textColor: .systemOrange)
-    let location = characterLabel(font: UIFont.preferredFont(forTextStyle: .footnote), textColor: .secondaryLabel)
+    let imageView = AvatarImageView(frame: .zero)
+    let title = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title2), textColor: .systemOrange)
+    let location = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .footnote), textColor: .secondaryLabel)
     
     
     override init(frame: CGRect) {

@@ -42,7 +42,6 @@ class CharactersViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    
     // MARK: - Setting up Collection View -
     
     private func setupCollectionView() {

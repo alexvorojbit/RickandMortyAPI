@@ -1,5 +1,5 @@
 //
-//  RMTitleLabel.swift
+//  CharacterLabel.swift
 //  RickandMortyAPI
 //
 //  Created by Alexandru Vorojbit on 9/2/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class characterLabel: UILabel {
+class CharacterLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

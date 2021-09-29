@@ -14,9 +14,8 @@ class NetworkManager {
     private let episodeURL = "https://rickandmortyapi.com/api/episode"
     let cache           = NSCache<NSString, UIImage>()
 
-
     func getElements<Element: Codable>(from endpoint: URL, completion: @escaping (Result<[Element], ErrorMessage>) -> Void) {
-        
+
         URLSession.shared.dataTask(with: endpoint) { (data, response, error) in
             if let _ = error {
                 completion(.failure(.unableToDownload))
