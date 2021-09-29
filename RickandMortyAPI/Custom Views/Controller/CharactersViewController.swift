@@ -111,7 +111,9 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // TODO: Avoid using force unwrapping, its dangerous and will lead to crashes.
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as! CharacterCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
+            fatalError("DequeueReusableCell failed while casting")
+        }
         let characterCell = characterResults[indexPath.item]
         cell.configure(with: characterCell)
         
