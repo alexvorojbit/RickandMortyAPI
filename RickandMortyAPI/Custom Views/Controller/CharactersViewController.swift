@@ -44,7 +44,6 @@ class CharactersViewController: UIViewController {
     }
     
     // MARK: - Setting up Collection View -
-    
     private func setupCollectionView() {
         // Initialises the collection view with a CollectionViewLayout
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createRowsFlowLayout(in: view))
