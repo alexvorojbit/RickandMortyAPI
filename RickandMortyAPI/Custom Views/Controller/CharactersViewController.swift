@@ -122,6 +122,8 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(characterResults[indexPath.item])
+        
+        let characterInfo = CharacterInfoViewController(char: characterResults[indexPath.item])
+        navigationController?.pushViewController(characterInfo, animated: true)
     }
 }

@@ -12,8 +12,8 @@ class CharacterInfoViewController: UIViewController {
     let characterImageView = AvatarImageView(frame: .zero)
     let locationLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
     let locationTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
-    let episodeLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
-    let episodeTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
+//    let episodeLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
+//    let episodeTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
     let statusLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
     let statusTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
     
@@ -49,7 +49,6 @@ class CharacterInfoViewController: UIViewController {
         view.addSubview(characterImageView)
         view.addSubview(locationLabel)
         view.addSubview(locationTitle)
-        view.addSubview(locationLabel)
         view.addSubview(statusLabel)
 //        view.addSubview(statusTitle)
     }

@@ -11,8 +11,8 @@ struct Character: Decodable, Hashable {
     let name: String
     let location: Location
     let image: String
-    let episode: URL
-    let status: String
+//    let episode: URL
+    let status: String?
 }
 
 struct Location: Decodable, Hashable {
