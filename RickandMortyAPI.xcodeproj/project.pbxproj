@@ -12,8 +12,9 @@
 		FA1A6D3A26E0195F000AF4A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6D3926E0195F000AF4A8 /* SceneDelegate.swift */; };
 		FA1A6D4126E01962000AF4A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1A6D4026E01962000AF4A8 /* Assets.xcassets */; };
 		FA1A6D4426E01962000AF4A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1A6D4226E01962000AF4A8 /* LaunchScreen.storyboard */; };
-		FA1A6D4C26E14E7F000AF4A8 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6D4B26E14E7F000AF4A8 /* CharactersViewController.swift */; };
+		FA1A6D4C26E14E7F000AF4A8 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6D4B26E14E7F000AF4A8 /* CharactersListViewController.swift */; };
 		FA1A6D5026E15765000AF4A8 /* CharacterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A6D4F26E15765000AF4A8 /* CharacterLabel.swift */; };
+		FA1EBE602710CF5F00412F58 /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1EBE5F2710CF5F00412F58 /* CharacterInfoViewController.swift */; };
 		FA7F955F26E2A9660041BB27 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F955E26E2A9660041BB27 /* Response.swift */; };
 		FA7F956426E376250041BB27 /* UICollectionReusableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F956326E376250041BB27 /* UICollectionReusableViewExtension.swift */; };
 		FA7F956C26E38D320041BB27 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F956B26E38D320041BB27 /* CharacterCollectionViewCell.swift */; };
@@ -21,8 +22,8 @@
 		FA7F957426E394680041BB27 /* RMPlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F957326E394680041BB27 /* RMPlaceholderImageView.swift */; };
 		FA7F957A26E3C4D40041BB27 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F957926E3C4D40041BB27 /* UIHelper.swift */; };
 		FA7F957C26E3C8FC0041BB27 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F957B26E3C8FC0041BB27 /* ErrorMessage.swift */; };
-		FA7F958226F3CF6D0041BB27 /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F958126F3CF6D0041BB27 /* CharacterInfoViewController.swift */; };
-		FA7F958426F3CFDB0041BB27 /* CharacterDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F958326F3CFDB0041BB27 /* CharacterDetailsCell.swift */; };
+		FA7F958226F3CF6D0041BB27 /* CharacterInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F958126F3CF6D0041BB27 /* CharacterInfoHeaderViewController.swift */; };
+		FA7F958426F3CFDB0041BB27 /* CharacterInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F958326F3CFDB0041BB27 /* CharacterInfoCollectionViewCell.swift */; };
 		FA82586C26F8ED3E00356C41 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82586B26F8ED3E00356C41 /* Character.swift */; };
 		FA82586E26F8ED5B00356C41 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82586D26F8ED5B00356C41 /* Episode.swift */; };
 		FA82587026F90F3400356C41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82586F26F90F3400356C41 /* UIViewExtension.swift */; };
@@ -41,8 +42,9 @@
 		FA1A6D4026E01962000AF4A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1A6D4326E01962000AF4A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1A6D4526E01962000AF4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA1A6D4B26E14E7F000AF4A8 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		FA1A6D4B26E14E7F000AF4A8 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		FA1A6D4F26E15765000AF4A8 /* CharacterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLabel.swift; sourceTree = "<group>"; };
+		FA1EBE5F2710CF5F00412F58 /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
 		FA7F955E26E2A9660041BB27 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FA7F956326E376250041BB27 /* UICollectionReusableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionReusableViewExtension.swift; sourceTree = "<group>"; };
 		FA7F956B26E38D320041BB27 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -50,8 +52,8 @@
 		FA7F957326E394680041BB27 /* RMPlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMPlaceholderImageView.swift; sourceTree = "<group>"; };
 		FA7F957926E3C4D40041BB27 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		FA7F957B26E3C8FC0041BB27 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
-		FA7F958126F3CF6D0041BB27 /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
-		FA7F958326F3CFDB0041BB27 /* CharacterDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsCell.swift; sourceTree = "<group>"; };
+		FA7F958126F3CF6D0041BB27 /* CharacterInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoHeaderViewController.swift; sourceTree = "<group>"; };
+		FA7F958326F3CFDB0041BB27 /* CharacterInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA82586B26F8ED3E00356C41 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		FA82586D26F8ED5B00356C41 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		FA82586F26F90F3400356C41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -115,47 +117,65 @@
 				FA7F957826E3C4AC0041BB27 /* UIHelper */,
 				FA7F956F26E393AC0041BB27 /* Network */,
 				FA7F956226E375F30041BB27 /* Extensions */,
-				FA7F955C26E2A1290041BB27 /* Models */,
+				FA7F955C26E2A1290041BB27 /* Model */,
 				FA7F955A26E2A11C0041BB27 /* Custom Views */,
-				FA7F955B26E2A1230041BB27 /* View */,
 				FA7F955D26E2A16B0041BB27 /* Support */,
-				FA1A6D4526E01962000AF4A8 /* Info.plist */,
+				FA1EBE5E2710CB5400412F58 /* Screens */,
 			);
 			path = RickandMortyAPI;
+			sourceTree = "<group>";
+		};
+		FA1EBE5D2710CB2400412F58 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F958126F3CF6D0041BB27 /* CharacterInfoHeaderViewController.swift */,
+			);
+			path = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
+		FA1EBE5E2710CB5400412F58 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A6D4B26E14E7F000AF4A8 /* CharactersListViewController.swift */,
+				FA1EBE5F2710CF5F00412F58 /* CharacterInfoViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		FA7F955A26E2A11C0041BB27 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F956926E38CF00041BB27 /* View Controllers */,
 				FA7F957226E394210041BB27 /* ImageViews */,
-				FA7F956926E38CF00041BB27 /* Controller */,
+				FA7F955B26E2A1230041BB27 /* Labels */,
 				FA7F956A26E38CFD0041BB27 /* Cells */,
 				FAF12973270471AE006FC271 /* EpisodeStore.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		FA7F955B26E2A1230041BB27 /* View */ = {
+		FA7F955B26E2A1230041BB27 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
 				FA1A6D4F26E15765000AF4A8 /* CharacterLabel.swift */,
 			);
-			path = View;
+			path = Labels;
 			sourceTree = "<group>";
 		};
-		FA7F955C26E2A1290041BB27 /* Models */ = {
+		FA7F955C26E2A1290041BB27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FA7F955E26E2A9660041BB27 /* Response.swift */,
 				FA82586B26F8ED3E00356C41 /* Character.swift */,
 				FA82586D26F8ED5B00356C41 /* Episode.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA7F955D26E2A16B0041BB27 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				FA1A6D4526E01962000AF4A8 /* Info.plist */,
 				FA1A6D3726E0195F000AF4A8 /* AppDelegate.swift */,
 				FA1A6D3926E0195F000AF4A8 /* SceneDelegate.swift */,
 				FA1A6D4026E01962000AF4A8 /* Assets.xcassets */,
@@ -173,20 +193,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		FA7F956926E38CF00041BB27 /* Controller */ = {
+		FA7F956926E38CF00041BB27 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA1A6D4B26E14E7F000AF4A8 /* CharactersViewController.swift */,
-				FA7F958126F3CF6D0041BB27 /* CharacterInfoViewController.swift */,
+				FA1EBE5D2710CB2400412F58 /* ItemInfoVCs */,
 			);
-			path = Controller;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		FA7F956A26E38CFD0041BB27 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FA7F956B26E38D320041BB27 /* CharacterCollectionViewCell.swift */,
-				FA7F958326F3CFDB0041BB27 /* CharacterDetailsCell.swift */,
+				FA7F958326F3CFDB0041BB27 /* CharacterInfoCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -336,13 +355,14 @@
 				FA7F956426E376250041BB27 /* UICollectionReusableViewExtension.swift in Sources */,
 				FA7F957126E393CA0041BB27 /* NetworkManager.swift in Sources */,
 				FAF12974270471AE006FC271 /* EpisodeStore.swift in Sources */,
-				FA1A6D4C26E14E7F000AF4A8 /* CharactersViewController.swift in Sources */,
+				FA1A6D4C26E14E7F000AF4A8 /* CharactersListViewController.swift in Sources */,
 				FA1A6D5026E15765000AF4A8 /* CharacterLabel.swift in Sources */,
-				FA7F958226F3CF6D0041BB27 /* CharacterInfoViewController.swift in Sources */,
+				FA7F958226F3CF6D0041BB27 /* CharacterInfoHeaderViewController.swift in Sources */,
 				FA82586E26F8ED5B00356C41 /* Episode.swift in Sources */,
 				FA82587026F90F3400356C41 /* UIViewExtension.swift in Sources */,
 				FA7F957C26E3C8FC0041BB27 /* ErrorMessage.swift in Sources */,
-				FA7F958426F3CFDB0041BB27 /* CharacterDetailsCell.swift in Sources */,
+				FA1EBE602710CF5F00412F58 /* CharacterInfoViewController.swift in Sources */,
+				FA7F958426F3CFDB0041BB27 /* CharacterInfoCollectionViewCell.swift in Sources */,
 				FA7F956C26E38D320041BB27 /* CharacterCollectionViewCell.swift in Sources */,
 				FA7F957426E394680041BB27 /* RMPlaceholderImageView.swift in Sources */,
 				FA1A6D3826E0195F000AF4A8 /* AppDelegate.swift in Sources */,
@@ -490,7 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87T5NBT3G4;
-				INFOPLIST_FILE = RickandMortyAPI/Info.plist;
+				INFOPLIST_FILE = RickandMortyAPI/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87T5NBT3G4;
-				INFOPLIST_FILE = RickandMortyAPI/Info.plist;
+				INFOPLIST_FILE = RickandMortyAPI/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,5 +1,5 @@
 //
-//  CharacterInfoViewController.swift
+//  CharacterInfoHeaderViewController.swift
 //  RickandMortyAPI
 //
 //  Created by Alexandru Vorojbit on 9/16/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterInfoViewController: UIViewController {
+class CharacterInfoHeaderViewController: UIViewController {
 
     let characterImageView = AvatarImageView(frame: .zero)
     let locationLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
@@ -17,9 +17,9 @@ class CharacterInfoViewController: UIViewController {
     let statusLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
     let statusTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
     
-    var character: Character!
+    var character: Response!
     
-    init(char: Character) {
+    init(char: Response) {
         super.init(nibName: nil, bundle: nil)
         self.character = char
     }
@@ -37,11 +37,13 @@ class CharacterInfoViewController: UIViewController {
     
     
     func configureUIElements() {
-        characterImageView.downloadImage(from: character.image)
-        locationLabel.text = "Last known location:"
-        locationTitle.text = character.location.name
-        statusLabel.text = "Status:"
-//        statusTitle.text = character.status
+        for item in character.results {
+            characterImageView.downloadImage(from: item.image)
+            locationLabel.text = "Last known location:"
+            locationTitle.text = item.location.name
+            statusLabel.text = "Status:"
+                //        statusTitle.text = character.status
+        }
     }
     
     

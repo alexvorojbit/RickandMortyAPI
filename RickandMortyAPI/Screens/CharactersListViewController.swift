@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  CharactersListViewController.swift
 //  RickandMortyAPI
 //
 //  Created by Alexandru Vorojbit on 9/2/21.
@@ -7,15 +7,17 @@
 
 import UIKit
 
-// TODO: Avoid using accronyms for your classes names, use `CharactersViewController` or `CharactersListViewController`.
+protocol GetCharacterInfoDelegate: AnyObject {
+    func getCharacterInfo(character: Response, index: IndexPath)
+}
+
 // TODO: Refactor to use the MVVM architecture and add a ViewModel (eg: CharactersListViexModel)
-class CharactersViewController: UIViewController {
+class CharactersListViewController: UIViewController {
 
     // TODO: You might want to add the "drag to refresh" capability as you have no Refresh button.
     
     var characterResults = [Character]()
     var collectionView: UICollectionView!
-    private let characterURL = "https://rickandmortyapi.com/api/character"
     
     let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .large)
@@ -31,8 +33,6 @@ class CharactersViewController: UIViewController {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.centerInSuperview()
         getData()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +101,7 @@ class CharactersViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CharactersListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterResults.count
@@ -122,8 +122,10 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let characterInfo = CharacterInfoViewController(char: characterResults[indexPath.item])
-        navigationController?.pushViewController(characterInfo, animated: true)
+        let destVC = CharacterInfoViewController()
+       
+//        destVC.delegate = self
+        let navController = UINavigationController(rootViewController: destVC)
+        navController.pushViewController(destVC, animated: true)
     }
 }

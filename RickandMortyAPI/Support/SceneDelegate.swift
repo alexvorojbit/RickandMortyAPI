@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createHomeNC() -> UINavigationController {
-        let charactersCVC = CharactersViewController()
+        let charactersCVC = CharactersListViewController()
 //        let attrs = [
 //            NSAttributedString.Key.foregroundColor: UIColor.red,
 //            NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 24)!
