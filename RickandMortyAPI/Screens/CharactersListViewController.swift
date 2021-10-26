@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GetCharacterInfoDelegate: AnyObject {
-    func getCharacterInfo(character: Response, index: IndexPath)
+    func getCharacterInfo(character: Response)
 }
 
 // TODO: Refactor to use the MVVM architecture and add a ViewModel (eg: CharactersListViexModel)
@@ -17,6 +17,7 @@ class CharactersListViewController: UIViewController {
     // TODO: You might want to add the "drag to refresh" capability as you have no Refresh button.
     
     var characterResults = [Character]()
+    var characterR: [Character] = []
     var collectionView: UICollectionView!
     
     let activityIndicatorView: UIActivityIndicatorView = {
@@ -123,9 +124,20 @@ extension CharactersListViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let destVC = CharacterInfoViewController()
-       
-//        destVC.delegate = self
+
+        destVC.delegate = self
         let navController = UINavigationController(rootViewController: destVC)
-        navController.pushViewController(destVC, animated: true)
+        present(navController, animated: true)
+    }
+}
+
+extension CharactersListViewController: GetCharacterInfoDelegate {
+    
+    func getCharacterInfo(character: Response) {
+        self.characterR = character.results
+        characterR.removeAll()
+        characterResults.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        getData()
     }
 }

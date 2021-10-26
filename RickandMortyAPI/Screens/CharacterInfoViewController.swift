@@ -13,14 +13,15 @@ class CharacterInfoViewController: UIViewController {
     
     let characterHeaderView = UIView()
     
-    var character: Response!
-    var characterIndex: IndexPath!
+//    var character: Response!
+//    var characterIndex: IndexPath!
     
     weak var delegate: GetCharacterInfoDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutUI()
+        getCharacterInfo() 
     }
     
     func getCharacterInfo() {
@@ -42,8 +43,9 @@ class CharacterInfoViewController: UIViewController {
     }
     
     func configureUIElements(with character: Response) {
+//        guard let characterIndex = characterIndex else { return }
         self.add(childVC: CharacterInfoHeaderViewController(char: character), to: self.characterHeaderView)
-        delegate?.getCharacterInfo(character: character, index: characterIndex)
+        delegate?.getCharacterInfo(character: character)
     }
     
     func add(childVC: UIViewController, to containerView: UIView) {
@@ -55,7 +57,7 @@ class CharacterInfoViewController: UIViewController {
     
     func layoutUI() {
         let padding: CGFloat    = 20
-        let itemHeight: CGFloat = 180
+        let itemHeight: CGFloat = 300
         
         view.addSubview(characterHeaderView)
         characterHeaderView.translatesAutoresizingMaskIntoConstraints = false

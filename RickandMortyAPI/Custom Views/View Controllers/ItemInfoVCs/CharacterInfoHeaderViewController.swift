@@ -14,8 +14,8 @@ class CharacterInfoHeaderViewController: UIViewController {
     let locationTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
 //    let episodeLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
 //    let episodeTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
-    let statusLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
-    let statusTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
+//    let statusLabel = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .body), textColor: .systemOrange)
+//    let statusTitle = CharacterLabel(font: UIFont.preferredFont(forTextStyle: .title3), textColor: .systemGray)
     
     var character: Response!
     
@@ -41,7 +41,7 @@ class CharacterInfoHeaderViewController: UIViewController {
             characterImageView.downloadImage(from: item.image)
             locationLabel.text = "Last known location:"
             locationTitle.text = item.location.name
-            statusLabel.text = "Status:"
+//            statusLabel.text = "Status:"
                 //        statusTitle.text = character.status
         }
     }
@@ -51,7 +51,7 @@ class CharacterInfoHeaderViewController: UIViewController {
         view.addSubview(characterImageView)
         view.addSubview(locationLabel)
         view.addSubview(locationTitle)
-        view.addSubview(statusLabel)
+//        view.addSubview(statusLabel)
 //        view.addSubview(statusTitle)
     }
     
@@ -75,10 +75,10 @@ class CharacterInfoHeaderViewController: UIViewController {
             locationTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             locationTitle.heightAnchor.constraint(equalToConstant: 20),
             
-            statusLabel.centerYAnchor.constraint(equalTo: characterImageView.centerYAnchor, constant: 8),
-            statusLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: textImagePadding),
-            statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            statusLabel.heightAnchor.constraint(equalToConstant: 20)
+//            statusLabel.centerYAnchor.constraint(equalTo: characterImageView.centerYAnchor, constant: 8),
+//            statusLabel.leadingAnchor.constraint(equalTo: characterImageView.trailingAnchor, constant: textImagePadding),
+//            statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            statusLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     

@@ -8,5 +8,5 @@
 import Foundation
 
 struct Response: Decodable, Hashable {
-    let results: [Character]
+    var results: [Character]
 }

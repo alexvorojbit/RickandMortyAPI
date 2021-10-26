@@ -12,7 +12,7 @@ struct Character: Decodable, Hashable {
     let location: Location
     let image: String
 //    let episode: URL
-    let status: String?
+//    var status: String?
 }
 
 struct Location: Decodable, Hashable {
